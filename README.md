@@ -1,2 +1,1 @@
-# libreriaR
 # propositional-logic-calculator
