@@ -28,13 +28,9 @@ public class Infijo {
 //        test("(P^Q)↔(-Qv-P)", "P^Q↔-Qv-P");
 //        test("((P→Q)^(Q^P))↔(P↔Q)", "P→Q^Q^P↔P↔Q");
 
-        test("PQ→QP^^PQ↔↔", "");
+        test("PQRv^PQ^↔PR^v", "");
     }
 
-    public static String convertiraInfijo(String proposicion) {
-        return proposicion.replaceAll("[( )]", "");
-    }
-    
     /**
     Método para evaluar si un caracter recibido es un operador o no
     @param c
@@ -73,7 +69,7 @@ public class Infijo {
         }
 
         String infijo = pila.toString();
-        infijo = infijo.substring(2, infijo.length() - 2);  //quita corchetes y paréntesis que envuelven toda la exp.
+//        infijo = infijo.substring(1, infijo.length() - 1);  //quita corchetes y paréntesis que envuelven toda la exp.
         return infijo;
     }
 
@@ -94,5 +90,9 @@ public class Infijo {
                 + "\nEvaluación: \t" + evaluacion
                 + "\n--------------------------------\n");
 
+    }
+    
+    public static String convertiraInfijo(String proposicion) {
+        return proposicion.replaceAll("[( )]", "");
     }
 }
