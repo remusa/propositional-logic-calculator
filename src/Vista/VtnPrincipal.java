@@ -15,7 +15,6 @@ import Ordenamiento.ETNode;
 import Ordenamiento.Posfijo;
 import comportamiento.Interfaz;
 import comportamiento.Mensajes;
-import interfaz.LookandFeel;
 import java.awt.event.ItemEvent;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -69,7 +68,9 @@ public class VtnPrincipal extends javax.swing.JFrame {
     }
 
     /**
-    Método para contar el número de variables (PQRSTU) y crear los arreglos correspondientes
+    Método para contar el número de variables (PQRSTU) y crear los arreglos correspondientes, se eliminan 
+    los caracteres que no sean variables (PQRSTU) y se agregan a un HashSet, como un HashSet no puede 
+    contener valores repetidos, el total de elementos correponde al total de variables
     @param proposicion
     @return 
      */
@@ -89,23 +90,10 @@ public class VtnPrincipal extends javax.swing.JFrame {
     @param proposicion 
      */
     private void mostrarTablasVariables(String proposicion) {
-//        if (proposicion.contains("U")) {
-//            noVar = 6;
-//        } else if (proposicion.contains("T")) {
-//            noVar = 5;
-//        } else if (proposicion.contains("S")) {
-//            noVar = 4;
-//        } else if (proposicion.contains("R")) {
-//            noVar = 3;
-//        } else if (proposicion.contains("Q")) {
-//            noVar = 2;
-//        } else if (proposicion.contains("P")) {
-//            noVar = 1;
-//        }
-
         noVar = contarVariables(proposicion);
 
-        vectorVariables = Valores.iniciar(noVar); //es un vector de máx. longitud 6, cada índice contiene
+        vectorVariables = Valores.iniciar(noVar); 
+        //es un vector de máx. longitud 6, cada índice contiene
         //un ArrayList<Character> con los valores de la tabla de verdad
 
         switch (noVar) {
@@ -714,33 +702,33 @@ public class VtnPrincipal extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        LookandFeel lf = new LookandFeel();
-        lf.darculaLF();
+//        LookandFeel lf = new LookandFeel();
+//        lf.darculaLF();
 
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//            
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(VtnPrincipal.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(VtnPrincipal.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(VtnPrincipal.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(VtnPrincipal.class
-//                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(VtnPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VtnPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VtnPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VtnPrincipal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
         //</editor-fold>
 
         /* Create and display the form */
