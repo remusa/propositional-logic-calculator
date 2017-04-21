@@ -30,7 +30,7 @@ public class Evaluacion extends Valores {
     public static ArrayList<Object> columna = new ArrayList<>();
     public static ArrayList<ArrayList> arrayTabla = new ArrayList<>();
 
-    public static void main(String[] args) throws IOException {
+//    public static void main(String[] args) throws IOException {
 //        ArrayList<Character> x = new ArrayList<>();
 //        x.add('V');
 //        x.add('V');
@@ -49,7 +49,7 @@ public class Evaluacion extends Valores {
 //        String propPrueba = "(P→Q^-R)↔((-P^-S)^R↔(P^-Q))^R→S";
 //        String propPrueba = "(P^Q)v(-Q^-P)";
 //        evaluacionIniciar("(P^Q)v(-Q^-P)");
-    }
+//    }
     
     /**
     Método para iniciar la evaluación, convierte una cadena con la proposición en postfijo,
