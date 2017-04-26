@@ -28,7 +28,8 @@ public class Infijo {
 //        test("(P^Q)↔(-Qv-P)", "P^Q↔-Qv-P");
 //        test("((P→Q)^(Q^P))↔(P↔Q)", "P→Q^Q^P↔P↔Q");
 
-        test("PQRv^PQ^↔PR^v", "");
+//        test("PQRv^PQ^↔PR^v", "");
+        test("5y*4x3y*+*x3y*+/5-+", "");
     }
 
     /**
@@ -43,7 +44,12 @@ public class Infijo {
                 || c == BICONDICIONAL
                 || c == NEGACION
                 || c == PARENTESISABRE
-                || c == PARENTESISCIERRA;
+                || c == PARENTESISCIERRA
+                || c == '+'
+                || c == '-'
+                || c == '*'
+                || c == '/'
+                || c == '^';
     }
 
     /**

@@ -23,7 +23,10 @@ public class ExpressionTree {
                 || c == 'v'
                 || c == '→'
                 || c == '↔'
-                || c == '-';
+                || c == '-'
+                || c == '+'
+                || c == '*'
+                || c == '/';
     }
 
     // Utility function to do inorden traversal
@@ -96,7 +99,8 @@ public class ExpressionTree {
     public static void main(String args[]) {
         ExpressionTree arbol = new ExpressionTree();
 //        String postfix = "PQ^Q-P-v↔";
-        String postfijo = "PQ→QP^^PQ↔↔";
+//        String postfijo = "PQ→QP^^PQ↔↔";
+        String postfijo = "5y*4x3y*+*x3y*+/5-+";
         char[] charArray = postfijo.toCharArray();
         ETNode root = arbol.construirArbol(charArray);
         System.out.println("infijo: ");
