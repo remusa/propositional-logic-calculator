@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package GraficarArbol;
 
 /**
@@ -24,10 +23,10 @@ public class Run {
         tree.insertRight('6', '8');
 
 //        tree.PostOrder(tree.root);
-
-        tree.Breadth(tree.root);
+//        tree.Breadth(tree.root);
+        tree.find(tree.root, '9');
 
         treeGUI treeGUI = new treeGUI(tree);
     }
-    
+
 }
